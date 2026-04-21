@@ -1,0 +1,31 @@
+{
+  "name": "shortener-starter",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "set NODE_ENV=production&& next build",
+    "start": "next start",
+    "lint": "next lint",
+    "health-check:run": "node scripts/run-health-check.mjs",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:generate": "prisma generate",
+    "prisma:status": "prisma migrate status",
+    "db:migrate-data": "node scripts/migrate-sqlite-to-postgres.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "prisma": "^6.19.3",
+    "typescript": "latest"
+  }
+}

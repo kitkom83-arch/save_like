@@ -1,0 +1,314 @@
+{
+  "app": {
+    "title": "Link Shortener",
+    "description": "Link shortener platform with dashboard and consent",
+    "languageThai": "ไทย",
+    "languageEnglish": "English",
+    "switchLanguage": "Switch language"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "links": "Links",
+    "newLink": "New Link",
+    "logs": "Click Logs",
+    "backDashboard": "Back to Dashboard",
+    "backLinks": "Back to Links",
+    "backLinkDetail": "Back to Link Detail",
+    "goDetail": "Detail"
+  },
+  "common": {
+    "status": "Status",
+    "consent": "Consent",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "open": "Open",
+    "copy": "Copy",
+    "copied": "Copied",
+    "unknown": "Unknown",
+    "notAvailable": "-",
+    "loading": "Loading...",
+    "empty": "No data",
+    "submitSuccess": "Saved successfully",
+    "submitFail": "Save failed",
+    "confirmDelete": "Confirm deleting this link?",
+    "deleteFail": "Delete failed"
+  },
+  "home": {
+    "heading": "Production-ready Link Shortener",
+    "description": "Manage links, track status, and review click analytics in one place.",
+    "openDashboard": "Open Dashboard",
+    "newLink": "Create New Link",
+    "openApi": "Open API /api/links"
+  },
+  "dashboard": {
+    "healthCheck": "Health Check",
+    "healthCheckDescription": "Check primary URLs for all non-paused links and update status automatically.",
+    "cards": {
+      "totalLinks": "Total Links",
+      "healthy": "healthy",
+      "broken": "broken",
+      "paused": "paused",
+      "totalClicks": "Total Clicks"
+    },
+    "latestLinks": "Latest Links",
+    "latestLinksDescription": "This is a system summary. Open each link detail page for per-link information.",
+    "visitors": "Visitors",
+    "approxNotice": "Location is approximate from IP and is not GPS.",
+    "topCountries": "Top Countries",
+    "topCities": "Top Cities (approximate)",
+    "topBrowsers": "Top Browsers",
+    "topOs": "Top OS",
+    "deviceBreakdown": "Device Breakdown",
+    "botVsHuman": "Bot vs Human",
+    "topReferrers": "Top Referrers",
+    "recentClicks": "Recent Enriched Clicks",
+    "table": {
+      "name": "Name",
+      "shortCode": "Short Code",
+      "status": "Status",
+      "clicks": "Clicks",
+      "updatedAt": "Updated",
+      "action": "Action",
+      "approxLocation": "Approx. Location",
+      "browserOs": "Browser / OS",
+      "device": "Device",
+      "time": "Time"
+    },
+    "emptyRecentLinks": "No links yet",
+    "emptyRecentClicks": "No visitor data yet"
+  },
+  "links": {
+    "title": "Manage Links",
+    "description": "Manage links per row. Each row shows click count and quick actions.",
+    "newTitle": "Create New Link",
+    "editTitle": "Edit Link",
+    "table": {
+      "name": "Name",
+      "campaign": "Campaign",
+      "sourceMedium": "Source / Medium",
+      "shortLink": "Short Link",
+      "status": "Status",
+      "consent": "Consent",
+      "clicks": "Clicks",
+      "latestClick": "Latest Click",
+      "manage": "Manage"
+    },
+    "actions": {
+      "viewDetail": "View Detail",
+      "edit": "Edit",
+      "viewQr": "View QR",
+      "open": "Open"
+    },
+    "empty": "No links yet",
+    "form": {
+      "sections": {
+        "basic": "Link Details",
+        "destination": "Destinations",
+        "consent": "Consent Settings",
+        "redirect": "Decision Behavior",
+        "note": "Additional Notes"
+      },
+      "required": "Required",
+      "optional": "Optional",
+      "title": "Display Title",
+      "campaignName": "Campaign Name",
+      "source": "Source",
+      "medium": "Medium",
+      "shortCode": "Short Code",
+      "primaryUrl": "Primary URL",
+      "fallbackUrl": "Fallback URL",
+      "status": "Status",
+      "note": "Note",
+      "consentMode": "Consent Mode",
+      "consentPreset": "Consent Preset",
+      "categories": "Categories to Request",
+      "customTitle": "Custom Consent Title",
+      "customMessage": "Custom Consent Message",
+      "redirectAfterConsent": "Redirect After Consent",
+      "redirectAfterReject": "Redirect After Reject",
+      "help": {
+        "shortCode": "Leave blank to let the system generate a short code.",
+        "fallbackUrl": "Used when the link status is broken.",
+        "consentMode": "normal: no prompt, consent_required: prompt before continue, custom: choose categories manually.",
+        "categories": "Selected categories are requested only on the public bridge page."
+      },
+      "createSubmit": "Create Link",
+      "editSubmit": "Save Changes",
+      "placeholders": {
+        "title": "e.g. LINE campaign A",
+        "campaignName": "e.g. Songkran Blast 2026",
+        "source": "e.g. line",
+        "medium": "e.g. social",
+        "shortCode": "Leave blank for auto-generate",
+        "primaryUrl": "https://example.com/main",
+        "fallbackUrl": "https://example.com/fallback",
+        "note": "Additional details",
+        "customTitle": "e.g. Additional consent request",
+        "customMessage": "Enter custom consent message"
+      }
+    },
+    "detail": {
+      "description": "Per-link detail and logs for this specific link.",
+      "currentStatus": "Current Status",
+      "shortCode": "Short Code",
+      "shortLink": "Short Link",
+      "primaryUrl": "Primary URL",
+      "fallbackUrl": "Fallback URL",
+      "campaignName": "Campaign Name",
+      "sourceMedium": "Source / Medium",
+      "clicks": "Total Clicks",
+      "latestClick": "Latest Click",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "note": "Note",
+      "qrTitle": "QR Code",
+      "openQr": "Open QR in new tab",
+      "downloadQr": "Download QR",
+      "openLink": "Open Link",
+      "analyticsTitle": "Analytics",
+      "logTitle": "Click Logs",
+      "noClicks": "No clicks for this link yet",
+      "topCountries": "Top Countries",
+      "topDevices": "Top Devices",
+      "topBrowsers": "Top Browsers",
+      "botVsHuman": "Bot vs Human",
+      "table": {
+        "time": "Time",
+        "ip": "IP",
+        "approxLocation": "Approx. Location",
+        "device": "Device",
+        "browserOs": "Browser / OS",
+        "referer": "Referer"
+      }
+    }
+  },
+  "logs": {
+    "title": "System Click Logs",
+    "description": "This page shows logs across all links. Open a link detail page for per-link logs.",
+    "empty": "No click logs yet",
+    "table": {
+      "shortCode": "Short Code",
+      "ip": "IP",
+      "approxLocation": "Approx. Location",
+      "device": "Device",
+      "browserOs": "Browser / OS",
+      "referer": "Referer",
+      "time": "Time"
+    }
+  },
+  "status": {
+    "healthy": "healthy",
+    "paused": "paused",
+    "broken": "broken",
+    "updating": "Updating...",
+    "updateSuccess": "Status updated",
+    "updateFail": "Failed to update status"
+  },
+  "healthCheck": {
+    "runNow": "Run Health Check Now",
+    "runLink": "Run Health Check for This Link",
+    "running": "Checking...",
+    "failed": "Health check failed",
+    "noResult": "No health-check result",
+    "summary": "Checked {{checked}} links, broken {{broken}}, recovered {{recovered}}, skipped {{skipped}}",
+    "statusResult": "Status {{statusAfter}}",
+    "statusResultWithReason": "Status {{statusAfter}} ({{reason}})"
+  },
+  "privacy": {
+    "title": "Privacy Settings",
+    "description": "IP location is approximate. Exact location can only be requested on the public bridge page.",
+    "mode": "Privacy Mode",
+    "maskIp": "Mask IP",
+    "exactLocation": "Exact Location",
+    "fingerprinting": "Fingerprinting",
+    "enabled": "enabled",
+    "disabled": "disabled",
+    "availableWithConsent": "available with consent"
+  },
+  "consent": {
+    "policyTitle": "Consent Policy",
+    "policyDescription": "This page configures per-link policy. Visitor consent appears only on the public bridge page.",
+    "mode": "Consent Mode",
+    "preset": "Consent Preset",
+    "categories": "Enabled Categories",
+    "rejectBehavior": "Reject Behavior",
+    "presetMessage": "Preset Message",
+    "none": "none",
+    "bridgeTitle": "Consent Before Opening Link",
+    "openingLinkFor": "You are opening the link for \"{{title}}\"",
+    "bridgeDescription": "Link /{{shortCode}} can continue with minimal mode even if you decline optional categories.",
+    "noExtraData": "This link does not request extra device data.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "customize": "Customize",
+    "hideCustomize": "Hide Customize",
+    "continue": "Continue",
+    "primaryDestination": "Primary destination",
+    "fallbackDestination": "Fallback destination",
+    "geoUnsupported": "This device does not support exact location, but you can continue normally.",
+    "geoDenied": "Exact location was not granted. Continuing with minimal mode.",
+    "categoryDescriptions": {
+      "exactLocation": "Exact location is requested from your browser only after explicit consent.",
+      "fingerprinting": "Fingerprint-like device details are used only when explicitly accepted.",
+      "default": "You can accept or reject this category."
+    },
+    "presets": {
+      "basic_analytics": {
+        "label": "Basic Analytics",
+        "title": "Basic analytics usage",
+        "message": "We use basic visit data to measure link performance without requiring exact device location."
+      },
+      "location_personalization": {
+        "label": "Location Personalization",
+        "title": "Location-based personalization",
+        "message": "To provide area-relevant information or offers, we request access to your device location. You can allow or skip and still continue."
+      },
+      "campaign_measurement": {
+        "label": "Campaign Measurement",
+        "title": "Campaign measurement",
+        "message": "We use limited usage data to measure campaign performance and improve your experience. You can accept all, reject all, or choose categories."
+      },
+      "custom": {
+        "label": "Custom Consent",
+        "title": "Additional consent request",
+        "message": "This message is configurable by admin for this specific link."
+      }
+    },
+    "modes": {
+      "normal": "normal",
+      "consent_required": "consent_required",
+      "custom": "custom"
+    },
+    "categoriesLabel": {
+      "analytics": "analytics",
+      "exactLocation": "exactLocation",
+      "marketing": "marketing",
+      "deviceDetails": "deviceDetails",
+      "fingerprinting": "fingerprinting"
+    },
+    "rejectBehaviors": {
+      "continue_minimal": "continue_minimal",
+      "go_to_fallback": "go_to_fallback",
+      "go_to_primary_without_optional_features": "go_to_primary_without_optional_features"
+    }
+  },
+  "paused": {
+    "badge": "paused",
+    "title": "This link is temporarily paused",
+    "description": "Short code /{{code}} is not available right now.",
+    "copyMain": "The team can switch this link to healthy or broken from the dashboard.",
+    "copySub": "Once re-enabled, the same short link will work according to the latest status.",
+    "backHome": "Back to Home",
+    "goDashboard": "Go to Dashboard"
+  },
+  "auth": {
+    "loginTitle": "Admin Login",
+    "loginDescription": "Enter admin PIN to continue.",
+    "pinLabel": "PIN",
+    "pinPlaceholder": "Enter PIN",
+    "loginButton": "Sign in",
+    "logoutButton": "Logout"
+  }
+}

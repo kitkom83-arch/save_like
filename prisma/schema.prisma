@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum LinkStatus {
+  healthy
+  broken
+  paused
+}
+
+model Link {
+  id          String      @id @default(cuid())
+  shortCode   String      @unique
+  title       String
+  primaryUrl  String
+  fallbackUrl String
+  status      LinkStatus  @default(healthy)
+  note        String?
+  clickCount  Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  clickLogs   ClickLog[]
+}
+
+model ClickLog {
+  id         String   @id @default(cuid())
+  linkId     String
+  shortCode  String
+  ipAddress  String?
+  userAgent  String?
+  referer    String?
+  country    String?
+  deviceType String?
+  clickedAt  DateTime @default(now())
+
+  link       Link     @relation(fields: [linkId], references: [id], onDelete: Cascade)
+}

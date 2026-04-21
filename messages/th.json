@@ -1,0 +1,314 @@
+{
+  "app": {
+    "title": "ระบบย่อลิงก์",
+    "description": "แพลตฟอร์มย่อลิงก์พร้อมแดชบอร์ดและการยินยอม",
+    "languageThai": "ไทย",
+    "languageEnglish": "English",
+    "switchLanguage": "สลับภาษา"
+  },
+  "nav": {
+    "home": "หน้าแรก",
+    "dashboard": "แดชบอร์ด",
+    "links": "ลิงก์",
+    "newLink": "สร้างลิงก์ใหม่",
+    "logs": "บันทึกการคลิก",
+    "backDashboard": "กลับแดชบอร์ด",
+    "backLinks": "กลับรายการลิงก์",
+    "backLinkDetail": "กลับรายละเอียดลิงก์",
+    "goDetail": "รายละเอียด"
+  },
+  "common": {
+    "status": "สถานะ",
+    "consent": "การยินยอม",
+    "save": "บันทึก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "open": "เปิด",
+    "copy": "คัดลอก",
+    "copied": "คัดลอกแล้ว",
+    "unknown": "ไม่ทราบ",
+    "notAvailable": "-",
+    "loading": "กำลังโหลด...",
+    "empty": "ยังไม่มีข้อมูล",
+    "submitSuccess": "บันทึกเรียบร้อย",
+    "submitFail": "บันทึกไม่สำเร็จ",
+    "confirmDelete": "ยืนยันการลบลิงก์นี้?",
+    "deleteFail": "ลบไม่สำเร็จ"
+  },
+  "home": {
+    "heading": "ระบบย่อลิงก์พร้อมใช้งาน",
+    "description": "จัดการลิงก์ ติดตามสถานะ และดูผลการคลิกในที่เดียว",
+    "openDashboard": "เข้าแดชบอร์ด",
+    "newLink": "สร้างลิงก์ใหม่",
+    "openApi": "ดู API /api/links"
+  },
+  "dashboard": {
+    "healthCheck": "ตรวจสุขภาพลิงก์",
+    "healthCheckDescription": "ตรวจ primaryUrl ทุกลิงก์ที่ไม่ใช่ paused แล้วอัปเดตสถานะอัตโนมัติ",
+    "cards": {
+      "totalLinks": "ลิงก์ทั้งหมด",
+      "healthy": "healthy",
+      "broken": "broken",
+      "paused": "paused",
+      "totalClicks": "คลิกทั้งหมด"
+    },
+    "latestLinks": "ลิงก์ล่าสุด",
+    "latestLinksDescription": "หน้านี้เป็นภาพรวมทั้งระบบ ส่วนรายละเอียดรายลิงก์ให้กดเข้าไปที่หน้าจัดการลิงก์",
+    "visitors": "ผู้เข้าชม",
+    "approxNotice": "ตำแหน่งนี้อ้างอิงจาก IP โดยประมาณ ไม่ใช่ GPS หรือพิกัดจริง",
+    "topCountries": "ประเทศยอดนิยม",
+    "topCities": "เมืองยอดนิยม (โดยประมาณ)",
+    "topBrowsers": "เบราว์เซอร์ยอดนิยม",
+    "topOs": "ระบบปฏิบัติการยอดนิยม",
+    "deviceBreakdown": "สัดส่วนอุปกรณ์",
+    "botVsHuman": "บอทเทียบผู้ใช้จริง",
+    "topReferrers": "แหล่งอ้างอิงยอดนิยม",
+    "recentClicks": "คลิกล่าสุด (วิเคราะห์แล้ว)",
+    "table": {
+      "name": "ชื่อ",
+      "shortCode": "รหัสสั้น",
+      "status": "สถานะ",
+      "clicks": "คลิก",
+      "updatedAt": "อัปเดตล่าสุด",
+      "action": "จัดการ",
+      "approxLocation": "ตำแหน่งโดยประมาณ",
+      "browserOs": "เบราว์เซอร์ / ระบบปฏิบัติการ",
+      "device": "อุปกรณ์",
+      "time": "เวลา"
+    },
+    "emptyRecentLinks": "ยังไม่มีลิงก์",
+    "emptyRecentClicks": "ยังไม่มีข้อมูลผู้เข้าชม"
+  },
+  "links": {
+    "title": "จัดการลิงก์",
+    "description": "หน้านี้เอาไว้จัดการลิงก์เป็นรายตัว แต่ละแถวจะมีจำนวนคลิกของลิงก์นั้น และกดดูรายละเอียดด้านในได้",
+    "newTitle": "สร้างลิงก์ใหม่",
+    "editTitle": "แก้ไขลิงก์",
+    "table": {
+      "name": "ชื่อ",
+      "campaign": "แคมเปญ",
+      "sourceMedium": "แหล่งที่มา / สื่อ",
+      "shortLink": "ลิงก์สั้น",
+      "status": "สถานะ",
+      "consent": "การยินยอม",
+      "clicks": "คลิก",
+      "latestClick": "คลิกล่าสุด",
+      "manage": "จัดการ"
+    },
+    "actions": {
+      "viewDetail": "ดูรายละเอียด",
+      "edit": "แก้ไข",
+      "viewQr": "ดู QR",
+      "open": "เปิด"
+    },
+    "empty": "ยังไม่มีลิงก์",
+    "form": {
+      "sections": {
+        "basic": "ข้อมูลลิงก์",
+        "destination": "ปลายทาง",
+        "consent": "การยินยอม",
+        "redirect": "พฤติกรรมหลังการตัดสินใจ",
+        "note": "หมายเหตุเพิ่มเติม"
+      },
+      "required": "จำเป็น",
+      "optional": "ไม่บังคับ",
+      "title": "ชื่อแสดงผล",
+      "campaignName": "ชื่อแคมเปญ",
+      "source": "แหล่งที่มา",
+      "medium": "สื่อ",
+      "shortCode": "รหัสสั้น",
+      "primaryUrl": "Primary URL",
+      "fallbackUrl": "Fallback URL",
+      "status": "สถานะ",
+      "note": "หมายเหตุ",
+      "consentMode": "โหมดการยินยอม",
+      "consentPreset": "รูปแบบข้อความยินยอม",
+      "categories": "หมวดที่ขออนุญาต",
+      "customTitle": "หัวข้อยินยอมแบบกำหนดเอง",
+      "customMessage": "ข้อความยินยอมแบบกำหนดเอง",
+      "redirectAfterConsent": "การไปต่อหลังยอมรับ",
+      "redirectAfterReject": "การไปต่อหลังปฏิเสธ",
+      "help": {
+        "shortCode": "หากไม่กรอก ระบบจะสร้างรหัสให้โดยอัตโนมัติ",
+        "fallbackUrl": "ใช้เมื่อสถานะลิงก์เป็น broken",
+        "consentMode": "normal: ไม่ถาม, consent_required: ถามก่อน, custom: เลือกหมวดเอง",
+        "categories": "หมวดที่เลือกจะถูกขอจากผู้เข้าชมบนหน้า bridge เท่านั้น"
+      },
+      "createSubmit": "สร้างลิงก์",
+      "editSubmit": "บันทึกการแก้ไข",
+      "placeholders": {
+        "title": "เช่น LINE campaign A",
+        "campaignName": "เช่น Songkran Blast 2026",
+        "source": "เช่น line",
+        "medium": "เช่น social",
+        "shortCode": "เว้นว่างได้ ระบบจะสุ่มให้",
+        "primaryUrl": "https://example.com/main",
+        "fallbackUrl": "https://example.com/fallback",
+        "note": "รายละเอียดเพิ่มเติม",
+        "customTitle": "เช่น การขอความยินยอมเพิ่มเติม",
+        "customMessage": "ระบุข้อความขอความยินยอมสำหรับผู้เข้าชม"
+      }
+    },
+    "detail": {
+      "description": "รายละเอียดลิงก์รายตัว และบันทึกของลิงก์นี้เท่านั้น",
+      "currentStatus": "สถานะปัจจุบัน",
+      "shortCode": "รหัสสั้น",
+      "shortLink": "ลิงก์สั้น",
+      "primaryUrl": "Primary URL",
+      "fallbackUrl": "Fallback URL",
+      "campaignName": "ชื่อแคมเปญ",
+      "sourceMedium": "แหล่งที่มา / สื่อ",
+      "clicks": "คลิกรวม",
+      "latestClick": "คลิกล่าสุด",
+      "createdAt": "สร้างเมื่อ",
+      "updatedAt": "อัปเดตล่าสุด",
+      "note": "หมายเหตุ",
+      "qrTitle": "QR Code",
+      "openQr": "เปิด QR ในแท็บใหม่",
+      "downloadQr": "ดาวน์โหลด QR",
+      "openLink": "เปิดลิงก์นี้",
+      "analyticsTitle": "Analytics ของลิงก์นี้",
+      "logTitle": "บันทึกการคลิกของลิงก์นี้",
+      "noClicks": "ลิงก์นี้ยังไม่มีการคลิก",
+      "topCountries": "ประเทศยอดนิยม",
+      "topDevices": "อุปกรณ์ยอดนิยม",
+      "topBrowsers": "เบราว์เซอร์ยอดนิยม",
+      "botVsHuman": "บอทเทียบผู้ใช้จริง",
+      "table": {
+        "time": "เวลา",
+        "ip": "IP",
+        "approxLocation": "ตำแหน่งโดยประมาณ",
+        "device": "อุปกรณ์",
+        "browserOs": "เบราว์เซอร์ / ระบบปฏิบัติการ",
+        "referer": "แหล่งอ้างอิง"
+      }
+    }
+  },
+  "logs": {
+    "title": "บันทึกการคลิกทั้งระบบ",
+    "description": "หน้านี้เป็นบันทึกรวมของทุกลิงก์ หากต้องการดูบันทึกรายลิงก์ ให้เข้าไปที่หน้ารายละเอียดของลิงก์นั้น",
+    "empty": "ยังไม่มีบันทึกการคลิก",
+    "table": {
+      "shortCode": "รหัสสั้น",
+      "ip": "IP",
+      "approxLocation": "ตำแหน่งโดยประมาณ",
+      "device": "อุปกรณ์",
+      "browserOs": "เบราว์เซอร์ / ระบบปฏิบัติการ",
+      "referer": "แหล่งอ้างอิง",
+      "time": "เวลา"
+    }
+  },
+  "status": {
+    "healthy": "healthy",
+    "paused": "paused",
+    "broken": "broken",
+    "updating": "กำลังอัปเดต...",
+    "updateSuccess": "อัปเดตสถานะแล้ว",
+    "updateFail": "อัปเดตสถานะไม่สำเร็จ"
+  },
+  "healthCheck": {
+    "runNow": "รัน health check ตอนนี้",
+    "runLink": "รัน health check ลิงก์นี้",
+    "running": "กำลังตรวจ...",
+    "failed": "รัน health check ไม่สำเร็จ",
+    "noResult": "ไม่มีผลลัพธ์จาก health check",
+    "summary": "ตรวจ {{checked}} ลิงก์, broken {{broken}}, recovered {{recovered}}, skipped {{skipped}}",
+    "statusResult": "สถานะ {{statusAfter}}",
+    "statusResultWithReason": "สถานะ {{statusAfter}} ({{reason}})"
+  },
+  "privacy": {
+    "title": "การตั้งค่าความเป็นส่วนตัว",
+    "description": "ตำแหน่งจาก IP เป็นข้อมูลโดยประมาณ ส่วน exact location จะถูกขอได้เฉพาะบน public bridge page เท่านั้น",
+    "mode": "โหมดความเป็นส่วนตัว",
+    "maskIp": "Mask IP",
+    "exactLocation": "Exact Location",
+    "fingerprinting": "Fingerprinting",
+    "enabled": "เปิดใช้งาน",
+    "disabled": "ปิดใช้งาน",
+    "availableWithConsent": "ใช้งานได้เมื่อผู้ใช้ยินยอม"
+  },
+  "consent": {
+    "policyTitle": "นโยบายการยินยอม",
+    "policyDescription": "หน้านี้ใช้สำหรับตั้ง policy รายลิงก์เท่านั้น กล่องยินยอมจะแสดงกับผู้เข้าชมบน public bridge page",
+    "mode": "โหมดการยินยอม",
+    "preset": "ชุดข้อความยินยอม",
+    "categories": "หมวดที่เปิดใช้งาน",
+    "rejectBehavior": "พฤติกรรมเมื่อปฏิเสธ",
+    "presetMessage": "ข้อความจาก preset",
+    "none": "ไม่มี",
+    "bridgeTitle": "การยินยอมก่อนเปิดลิงก์",
+    "openingLinkFor": "คุณกำลังเปิดลิงก์สำหรับ \"{{title}}\"",
+    "bridgeDescription": "ลิงก์ /{{shortCode}} จะยังใช้งานต่อได้แม้คุณเลือกใช้เฉพาะข้อมูลขั้นต่ำ",
+    "noExtraData": "ลิงก์นี้ไม่ได้ขอข้อมูลเพิ่มเติมจากอุปกรณ์ของคุณ",
+    "acceptAll": "ยอมรับทั้งหมด",
+    "rejectAll": "ปฏิเสธทั้งหมด",
+    "customize": "ตั้งค่าเอง",
+    "hideCustomize": "ซ่อนการตั้งค่า",
+    "continue": "ดำเนินการต่อ",
+    "primaryDestination": "ปลายทางหลัก",
+    "fallbackDestination": "ปลายทางสำรอง",
+    "geoUnsupported": "อุปกรณ์นี้ไม่รองรับการอ่านตำแหน่งจริง แต่คุณยังไปต่อได้ตามปกติ",
+    "geoDenied": "ไม่ได้รับตำแหน่งจริงจากอุปกรณ์ จึงไปต่อด้วยข้อมูลขั้นต่ำแทน",
+    "categoryDescriptions": {
+      "exactLocation": "ตำแหน่งจริงจะถูกขอจาก browser ของคุณก็ต่อเมื่อคุณกดยอมรับ",
+      "fingerprinting": "ข้อมูลลักษณะอุปกรณ์เชิงละเอียดจะถูกใช้งานเฉพาะเมื่อคุณยอมรับเท่านั้น",
+      "default": "คุณสามารถอนุญาตหรือปฏิเสธหมวดนี้ได้"
+    },
+    "presets": {
+      "basic_analytics": {
+        "label": "Basic Analytics",
+        "title": "การใช้งานข้อมูลพื้นฐาน",
+        "message": "เราใช้ข้อมูลการเข้าชมพื้นฐานเพื่อวัดผลการใช้งานของลิงก์นี้ โดยไม่จำเป็นต้องเข้าถึงตำแหน่งจริงของอุปกรณ์"
+      },
+      "location_personalization": {
+        "label": "Location Personalization",
+        "title": "การใช้ตำแหน่งเพื่อปรับประสบการณ์",
+        "message": "เพื่อแสดงข้อมูลหรือสิทธิ์ที่เหมาะกับพื้นที่ของคุณมากขึ้น เราขออนุญาตเข้าถึงตำแหน่งของอุปกรณ์ คุณสามารถอนุญาตหรือข้ามได้ และยังใช้งานลิงก์ต่อได้ตามปกติ"
+      },
+      "campaign_measurement": {
+        "label": "Campaign Measurement",
+        "title": "การวัดผลแคมเปญ",
+        "message": "เราใช้ข้อมูลการใช้งานบางส่วนเพื่อวัดผลแคมเปญและปรับปรุงประสบการณ์ของคุณ คุณสามารถยอมรับทั้งหมด ปฏิเสธ หรือเลือกเฉพาะที่ต้องการได้"
+      },
+      "custom": {
+        "label": "Custom Consent",
+        "title": "การขอความยินยอมเพิ่มเติม",
+        "message": "ข้อความนี้กำหนดเองได้จากหลังบ้านเพื่อให้เหมาะกับการใช้งานของลิงก์นี้"
+      }
+    },
+    "modes": {
+      "normal": "ปกติ (normal)",
+      "consent_required": "ต้องขออนุญาต (consent_required)",
+      "custom": "กำหนดเอง (custom)"
+    },
+    "categoriesLabel": {
+      "analytics": "การวิเคราะห์การใช้งาน (analytics)",
+      "exactLocation": "ตำแหน่งจริง (exactLocation)",
+      "marketing": "การตลาด (marketing)",
+      "deviceDetails": "รายละเอียดอุปกรณ์ (deviceDetails)",
+      "fingerprinting": "ลายนิ้วมืออุปกรณ์ (fingerprinting)"
+    },
+    "rejectBehaviors": {
+      "continue_minimal": "ไปต่อแบบข้อมูลขั้นต่ำ (continue_minimal)",
+      "go_to_fallback": "ไปลิงก์สำรอง (go_to_fallback)",
+      "go_to_primary_without_optional_features": "ไปลิงก์หลักโดยไม่ใช้ฟีเจอร์เสริม (go_to_primary_without_optional_features)"
+    }
+  },
+  "paused": {
+    "badge": "paused",
+    "title": "ลิงก์นี้ถูกพักใช้งานชั่วคราว",
+    "description": "รหัส /{{code}} ยังไม่พร้อมให้ใช้งานในตอนนี้",
+    "copyMain": "ทีมงานสามารถกลับไปที่แดชบอร์ดเพื่อเปลี่ยนสถานะเป็น healthy หรือ broken ได้ทันที",
+    "copySub": "เมื่อเปิดใช้งานอีกครั้ง short link เดิมจะกลับมาทำงานตามสถานะล่าสุด",
+    "backHome": "กลับหน้าแรก",
+    "goDashboard": "ไปที่แดชบอร์ด"
+  },
+  "auth": {
+    "loginTitle": "เข้าสู่ระบบหลังบ้าน",
+    "loginDescription": "กรอกรหัสผู้ดูแลระบบเพื่อเข้าใช้งาน",
+    "pinLabel": "รหัสเข้าใช้งาน",
+    "pinPlaceholder": "กรอกรหัส",
+    "loginButton": "เข้าสู่ระบบ",
+    "logoutButton": "ออกจากระบบ"
+  }
+}

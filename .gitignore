@@ -1,0 +1,15 @@
+node_modules
+.next
+.env
+.env.local
+*.log
+prisma/dev.db
+prisma/dev.db-journal
+.env
+.env.local
+.env.production
+.next
+.next-dev-ui.pid
+node_modules
+tsconfig.tsbuildinfo
+.vercel
