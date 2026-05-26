@@ -20,7 +20,7 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
   const { locale, t, localize } = await getServerI18n();
   const dateLocale = getLocaleDateFormat(locale);
 
-  const [link, baseUrl] = await Promise.all([
+  const [link, baseUrl, totalClickLogs, fallbackUsed, pausedHits] = await Promise.all([
     prisma.link.findUnique({
       where: { id },
       include: {
@@ -31,6 +31,9 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
       },
     }),
     getBaseUrl(),
+    prisma.clickLog.count({ where: { linkId: id } }),
+    prisma.clickLog.count({ where: { linkId: id, outcome: "fallback" } }),
+    prisma.clickLog.count({ where: { linkId: id, outcome: "paused" } }),
   ]);
 
   if (!link) {
@@ -39,7 +42,7 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
 
   const shortUrl = `${baseUrl}/${link.shortCode}`;
   const qrUrl = `/api/links/${link.id}/qr`;
-  const totalClicks = link.clickCount || link.clickLogs.length;
+  const totalClicks = Math.max(link.clickCount, totalClickLogs);
   const latestClick = link.clickLogs[0]?.clickedAt ?? null;
   const metadata = parseLinkMetadata(link.note);
   const analytics = await buildClickAnalytics(link.clickLogs);
@@ -89,9 +92,12 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
             <div>{metadata.campaignName || t("common.notAvailable", "-")}</div>
           </div>
           <div>
-            <p className="small">{t("links.detail.sourceMedium", "Source / Medium")}</p>
+            <p className="small">{t("links.detail.source", "Source")}</p>
             <div>{metadata.source || t("common.notAvailable", "-")}</div>
-            <div className="small">{metadata.medium || t("common.notAvailable", "-")}</div>
+          </div>
+          <div>
+            <p className="small">{t("links.detail.medium", "Medium")}</p>
+            <div>{metadata.medium || t("common.notAvailable", "-")}</div>
           </div>
         </div>
 
@@ -104,6 +110,17 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
             <p className="small">{t("links.detail.latestClick", "Latest Click")}</p>
             <h2 style={{ fontSize: 18 }}>{latestClick ? new Date(latestClick).toLocaleString(dateLocale) : t("common.notAvailable", "-")}</h2>
           </div>
+          <div className="form-section">
+            <p className="small">{t("links.detail.fallbackUsed", "Fallback Used")}</p>
+            <h2>{fallbackUsed}</h2>
+          </div>
+          <div className="form-section">
+            <p className="small">{t("links.detail.pausedHits", "Paused Hits")}</p>
+            <h2>{pausedHits}</h2>
+          </div>
+        </div>
+
+        <div className="grid grid-2">
           <div className="form-section">
             <p className="small">{t("links.detail.createdAt", "Created At")}</p>
             <h2 style={{ fontSize: 18 }}>{new Date(link.createdAt).toLocaleString(dateLocale)}</h2>
@@ -141,11 +158,15 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
 
         <div className="row wrap">
           <a href={shortUrl} target="_blank" rel="noreferrer"><button type="button" className="secondary">{t("links.detail.openLink", "Open Link")}</button></a>
+          <Link href={localize(`/dashboard/links/${link.id}/edit`)}><button type="button" className="secondary">{t("common.edit", "Edit")}</button></Link>
+          <a href={`/api/links/click-logs/export?linkId=${encodeURIComponent(link.id)}`}>
+            <button type="button" className="secondary">{t("links.export.clickLogs", "Export Click Logs CSV")}</button>
+          </a>
           <div style={{ width: 160 }}>
             <CopyLinkButton url={shortUrl} />
           </div>
           <div style={{ width: 160 }}>
-            <DeleteLinkButton id={link.id} />
+            <DeleteLinkButton id={link.id} redirectTo="/dashboard/links" />
           </div>
           <div style={{ minWidth: 220, flex: 1 }}>
             <RunLinkHealthCheckButton id={link.id} />
@@ -203,6 +224,7 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
             <thead>
               <tr>
                 <th>{t("links.detail.table.time", "Time")}</th>
+                <th>{t("links.detail.table.outcome", "Outcome")}</th>
                 <th>{t("links.detail.table.ip", "IP")}</th>
                 <th>{t("links.detail.table.approxLocation", "Approx. Location")}</th>
                 <th>{t("links.detail.table.device", "Device")}</th>
@@ -214,6 +236,7 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
               {analytics.enrichedLogs.map((log) => (
                 <tr key={log.id}>
                   <td>{new Date(log.clickedAt).toLocaleString(dateLocale)}</td>
+                  <td>{log.outcome}</td>
                   <td>{log.displayIp || t("common.notAvailable", "-")}</td>
                   <td>{log.approximateCity || log.approximateCountry || t("common.unknown", "Unknown")}</td>
                   <td>{log.deviceTypeResolved || t("common.unknown", "Unknown")}</td>
@@ -223,7 +246,7 @@ export default async function LinkDetailPage({ params }: { params: Promise<{ id:
               ))}
               {link.clickLogs.length === 0 ? (
                 <tr>
-                  <td colSpan={6}>{t("links.detail.noClicks", "No clicks for this link yet")}</td>
+                  <td colSpan={7}>{t("links.detail.noClicks", "No clicks for this link yet")}</td>
                 </tr>
               ) : null}
             </tbody>

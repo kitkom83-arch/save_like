@@ -33,6 +33,7 @@ model ClickLog {
   id         String   @id @default(cuid())
   linkId     String
   shortCode  String
+  outcome    String   @default("primary")
   ipAddress  String?
   userAgent  String?
   referer    String?
@@ -41,4 +42,6 @@ model ClickLog {
   clickedAt  DateTime @default(now())
 
   link       Link     @relation(fields: [linkId], references: [id], onDelete: Cascade)
+
+  @@index([linkId, outcome])
 }

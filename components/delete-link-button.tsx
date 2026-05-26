@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useI18n } from "@/components/i18n-provider";
 
-export default function DeleteLinkButton({ id }: { id: string }) {
-  const { t } = useI18n();
+export default function DeleteLinkButton({ id, redirectTo }: { id: string; redirectTo?: string }) {
+  const { t, localize } = useI18n();
   const router = useRouter();
 
   async function handleDelete() {
@@ -17,6 +17,9 @@ export default function DeleteLinkButton({ id }: { id: string }) {
       return;
     }
 
+    if (redirectTo) {
+      router.push(localize(redirectTo));
+    }
     router.refresh();
   }
 

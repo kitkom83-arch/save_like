@@ -20,12 +20,9 @@ type VisitOptions = {
   forceFallback?: boolean;
 };
 
-export async function handleLinkVisit(request: NextRequest, link: LinkRecord, options?: VisitOptions) {
-  if (link.status === "paused") {
-    const pausedUrl = new URL(`/paused?code=${encodeURIComponent(link.shortCode)}`, request.url);
-    return NextResponse.redirect(pausedUrl, 307);
-  }
+type ClickOutcome = "primary" | "fallback" | "paused";
 
+async function recordClick(request: NextRequest, link: LinkRecord, outcome: ClickOutcome) {
   const metadata = parseRequestMetadata(request);
   const privacy = getPrivacyConfig();
   const maskedIp = privacy.storeRawIp ? metadata.ipAddress : maskIpForStorage(metadata.ipAddress);
@@ -39,6 +36,7 @@ export async function handleLinkVisit(request: NextRequest, link: LinkRecord, op
       data: {
         linkId: link.id,
         shortCode: link.shortCode,
+        outcome,
         ipAddress: maskedIp,
         userAgent: metadata.userAgent,
         referer: metadata.referer,
@@ -51,11 +49,21 @@ export async function handleLinkVisit(request: NextRequest, link: LinkRecord, op
       data: { clickCount: { increment: 1 } },
     }),
   ]);
+}
 
+export async function handleLinkVisit(request: NextRequest, link: LinkRecord, options?: VisitOptions) {
+  if (link.status === "paused") {
+    await recordClick(request, link, "paused");
+    const pausedUrl = new URL(`/paused?code=${encodeURIComponent(link.shortCode)}`, request.url);
+    return NextResponse.redirect(pausedUrl, 307);
+  }
+
+  const useFallback = link.status === "broken" || options?.forceFallback;
+  await recordClick(request, link, useFallback ? "fallback" : "primary");
   const destination =
-    link.status === "broken" || options?.forceFallback ? link.fallbackUrl : link.primaryUrl;
+    useFallback ? link.fallbackUrl : link.primaryUrl;
 
-  if (link.status === "broken" || options?.forceFallback) {
+  if (useFallback) {
     await sendFallbackUsageAlert({
       shortCode: link.shortCode,
       title: link.title,

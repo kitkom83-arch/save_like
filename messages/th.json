@@ -101,6 +101,28 @@
       "viewQr": "ดู QR",
       "open": "เปิด"
     },
+    "export": {
+      "links": "Export links CSV",
+      "clickLogs": "Export click logs CSV"
+    },
+    "filters": {
+      "search": "ค้นหา",
+      "searchPlaceholder": "ชื่อหรือรหัสสั้น",
+      "status": "สถานะ",
+      "allStatuses": "ทุกสถานะ",
+      "sort": "เรียงตาม",
+      "sortUpdated": "อัปเดตล่าสุด",
+      "sortNewest": "สร้างใหม่ล่าสุด",
+      "sortClicks": "จำนวนคลิก",
+      "apply": "ค้นหา",
+      "reset": "ล้าง"
+    },
+    "pagination": {
+      "summary": "แสดง {{shown}} จาก {{total}} ลิงก์",
+      "page": "หน้า {{page}} จาก {{totalPages}}",
+      "previous": "ก่อนหน้า",
+      "next": "ถัดไป"
+    },
     "empty": "ยังไม่มีลิงก์",
     "form": {
       "sections": {
@@ -158,8 +180,12 @@
       "fallbackUrl": "Fallback URL",
       "campaignName": "ชื่อแคมเปญ",
       "sourceMedium": "แหล่งที่มา / สื่อ",
+      "source": "แหล่งที่มา",
+      "medium": "สื่อ",
       "clicks": "คลิกรวม",
       "latestClick": "คลิกล่าสุด",
+      "fallbackUsed": "ใช้ fallback",
+      "pausedHits": "จำนวนครั้งที่เจอ paused",
       "createdAt": "สร้างเมื่อ",
       "updatedAt": "อัปเดตล่าสุด",
       "note": "หมายเหตุ",
@@ -176,6 +202,7 @@
       "botVsHuman": "บอทเทียบผู้ใช้จริง",
       "table": {
         "time": "เวลา",
+        "outcome": "ผลลัพธ์",
         "ip": "IP",
         "approxLocation": "ตำแหน่งโดยประมาณ",
         "device": "อุปกรณ์",

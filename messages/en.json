@@ -101,6 +101,28 @@
       "viewQr": "View QR",
       "open": "Open"
     },
+    "export": {
+      "links": "Export Links CSV",
+      "clickLogs": "Export Click Logs CSV"
+    },
+    "filters": {
+      "search": "Search",
+      "searchPlaceholder": "Name or short code",
+      "status": "Status",
+      "allStatuses": "All statuses",
+      "sort": "Sort",
+      "sortUpdated": "Latest updated",
+      "sortNewest": "Newest created",
+      "sortClicks": "Clicks",
+      "apply": "Apply",
+      "reset": "Reset"
+    },
+    "pagination": {
+      "summary": "Showing {{shown}} of {{total}} links",
+      "page": "Page {{page}} of {{totalPages}}",
+      "previous": "Previous",
+      "next": "Next"
+    },
     "empty": "No links yet",
     "form": {
       "sections": {
@@ -158,8 +180,12 @@
       "fallbackUrl": "Fallback URL",
       "campaignName": "Campaign Name",
       "sourceMedium": "Source / Medium",
+      "source": "Source",
+      "medium": "Medium",
       "clicks": "Total Clicks",
       "latestClick": "Latest Click",
+      "fallbackUsed": "Fallback Used",
+      "pausedHits": "Paused Hits",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
       "note": "Note",
@@ -176,6 +202,7 @@
       "botVsHuman": "Bot vs Human",
       "table": {
         "time": "Time",
+        "outcome": "Outcome",
         "ip": "IP",
         "approxLocation": "Approx. Location",
         "device": "Device",

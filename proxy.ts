@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { adminSessionCookieName, verifyAdminSession } from "@/lib/auth";
 import { defaultLocale, isLocale, localeCookieName, type Locale } from "@/lib/i18n/config";
 
-const localizedRoots = new Set(["dashboard", "bridge", "paused", "login"]);
-
 function parseAcceptLanguage(header: string | null): Locale | null {
   if (!header) {
     return null;
@@ -87,12 +85,6 @@ export async function proxy(request: NextRequest) {
 
   if (pathname === "/") {
     const response = NextResponse.redirect(new URL(`/${locale}`, request.url));
-    response.cookies.set(localeCookieName, locale, { path: "/", maxAge: 31536000, sameSite: "lax" });
-    return response;
-  }
-
-  if (first && localizedRoots.has(first)) {
-    const response = NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
     response.cookies.set(localeCookieName, locale, { path: "/", maxAge: 31536000, sameSite: "lax" });
     return response;
   }

@@ -6,6 +6,7 @@ import { parseRequestMetadata } from "@/lib/request-metadata";
 type ClickLogRecord = {
   id: string;
   shortCode: string;
+  outcome: string;
   ipAddress: string | null;
   userAgent: string | null;
   referer: string | null;
